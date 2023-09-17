@@ -21164,7 +21164,7 @@ textarea.form-control-lg {
   color: #52307f;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   .navbar-container {
     justify-content: unset;
     display: grid !important;
@@ -21174,7 +21174,7 @@ textarea.form-control-lg {
     margin-bottom: 12px;
   }
   .navbar-form {
-    margin-bottom: 12px;
+    margin-bottom: 24px;
   }
   .navbar-form .nav-input {
     width: 100%;

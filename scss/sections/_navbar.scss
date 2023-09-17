@@ -61,7 +61,7 @@
   }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(lg) {
   .navbar {
     &-container {
       justify-content: unset;
@@ -73,7 +73,7 @@
     }
 
     &-form {
-      margin-bottom: 12px;
+      margin-bottom: 24px;
       .nav {
         &-input {
           width: 100%;
