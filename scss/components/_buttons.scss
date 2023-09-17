@@ -21,20 +21,22 @@
 // BUTTON SECONDARY
 .btn-2 {
   color: $primary;
-  font-size: 18px;
+  font-size: 16px;
   flex-grow: 1;
-  font-weight: 500;
+  font-weight: 600;
   background-color: unset;
-  border: 2px solid $primary;
-  padding-block: 12px;
-  padding-inline: 24px;
-  border-radius: 4px;
+  border: none;
+  border-radius: 24px;
   transition: all 0.2s ease !important;
 }
-.btn-2:hover,
-.btn-link-2:hover {
-  color: map-get($theme-colors, "primary-hover");
-  border-color: map-get($theme-colors, "primary-hover");
+.btn-2:hover {
+  .custom-icon {
+    background-color: $primary-hover;
+  }
+  .custom-icon-2 {
+    color: $primary-hover;
+  }
+  color: $primary-hover;
 }
 
 @include media-breakpoint-down(md) {

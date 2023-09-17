@@ -33,19 +33,18 @@ $gray-800: #343a40;
 $gray-900: #212529;
 
 // DEFAULT THEME COLOR
-$primary: #73bf44;
-$secondary: #3c3c3c;
+$primary: #52307f;
+$secondary: #e8e2ed;
+
 $white: #f7f7f7;
-$black: #333;
-$black-secondary: #495057;
+$black: #595959;
 
 // CUSTOM THEME COLOR
-$primary-tint: #d7f9c2;
-$primary-shade: #173206;
-$primary-100: #e3f2da;
-$primary-200: #2e4c1b;
-$primary-hover: #6fb842;
-$primary-hover-2: #5c9936;
+
+$primary-100: #fcf8ff;
+$primary-hover: #46296c;
+$secondary-hover: #ebe6f0;
+$primary-tint: #cca7fb;
 $danger-tint: #fce4e6;
 
 @import "../node_modules/bootstrap/scss/functions";
@@ -62,15 +61,11 @@ $custom-theme-colors: (
   "gray-700": $gray-700,
   "gray-800": $gray-800,
   "gray-900": $gray-900,
-
   // THEMES
-  "primary-hover": $primary-hover,
-  "primary-hover-2": $primary-hover-2,
-  "primary-shade": $primary-shade,
   "primary-tint": $primary-tint,
+  "primary-hover": $primary-hover,
   "primary-100": $primary-100,
-  "primary-200": $primary-200,
-  "black-secondary": $black-secondary,
+  "secondary-hover": $secondary-hover,
   "danger-tint": $danger-tint,
 );
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
