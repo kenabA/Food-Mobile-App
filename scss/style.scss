@@ -1,0 +1,13 @@
+@use "custom";
+
+// IMPORT COMPONENTS
+
+@use "components/buttons";
+@use "components/default";
+@use "components/card";
+@use "components/mixins";
+@use "components/typography.scss";
+
+// IMPORT SECTIONS
+@use "sections/navbar";
+@use "sections/hero";

@@ -1,0 +1,79 @@
+$enable-negative-margins: true;
+$spacers: (
+  0: 0,
+  2: 0.125rem,
+  4: 0.25rem,
+  8: 0.5rem,
+  12: 0.75rem,
+  16: 1rem,
+  18: 1.125rem,
+  20: 1.25rem,
+  24: 1.5rem,
+  32: 2rem,
+  40: 2.5rem,
+  48: 3rem,
+  56: 3.5rem,
+  64: 4rem,
+  72: 4.5rem,
+  80: 5rem,
+  88: 5.5rem,
+  96: 6rem,
+  100: 6.25rem,
+);
+
+// WHITE & GREY
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// DEFAULT THEME COLOR
+$primary: #73bf44;
+$secondary: #3c3c3c;
+$white: #f7f7f7;
+$black: #333;
+$black-secondary: #495057;
+
+// CUSTOM THEME COLOR
+$primary-tint: #d7f9c2;
+$primary-shade: #173206;
+$primary-100: #e3f2da;
+$primary-200: #2e4c1b;
+$primary-hover: #6fb842;
+$primary-hover-2: #5c9936;
+$danger-tint: #fce4e6;
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// CUSTOM THEME COLORS
+$custom-theme-colors: (
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900,
+
+  // THEMES
+  "primary-hover": $primary-hover,
+  "primary-hover-2": $primary-hover-2,
+  "primary-shade": $primary-shade,
+  "primary-tint": $primary-tint,
+  "primary-100": $primary-100,
+  "primary-200": $primary-200,
+  "black-secondary": $black-secondary,
+  "danger-tint": $danger-tint,
+);
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// IMPORT BOOTSTRAP
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

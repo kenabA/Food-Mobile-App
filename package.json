@@ -1,0 +1,19 @@
+{
+  "name": "portfolio---project",
+  "version": "1.0.0",
+  "description": "Personal Portfolio w/ Bootstrap and SASSS",
+  "main": "index.js",
+  "scripts": {
+    "compile": "sass --watch scss:assets/css"
+  },
+  "author": "Kenab Kushal K.C.",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "autoprefixer": "^10.4.14",
+    "bootstrap": "^5.3.1"
+  },
+  "devDependencies": {
+    "sass": "^1.64.2"
+  }
+}
