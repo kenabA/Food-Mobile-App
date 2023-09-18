@@ -21231,6 +21231,7 @@ textarea.form-control-lg {
 }
 
 #results {
+  min-height: 100vh;
   border-radius: 0px 24px 0px 0px !important;
 }
 #results .results-individual {
