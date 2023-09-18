@@ -12,6 +12,19 @@
   padding-inline: 24px;
   border-radius: 4px;
   transition: all 0.2s ease !important;
+  &-small {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    padding-block: 4px;
+    border-radius: 24px;
+    padding-inline: 12px;
+    font-weight: 500;
+    color: $primary;
+    background-color: $secondary;
+    border: none;
+  }
 }
 .btn-1:hover,
 .btn-1-link:hover {
@@ -20,10 +33,11 @@
 }
 // BUTTON SECONDARY
 .btn-2 {
+  text-transform: uppercase;
   color: $primary;
   font-size: 16px;
   flex-grow: 1;
-  font-weight: 600;
+  font-weight: 400;
   background-color: unset;
   border: none;
   border-radius: 24px;

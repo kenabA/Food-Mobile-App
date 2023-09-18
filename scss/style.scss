@@ -1,7 +1,6 @@
 @use "custom";
 
 // IMPORT COMPONENTS
-
 @use "components/buttons";
 @use "components/default";
 @use "components/card";
@@ -10,4 +9,5 @@
 
 // IMPORT SECTIONS
 @use "sections/navbar";
-@use "sections/hero";
+@use "sections/details";
+@use "sections/results";

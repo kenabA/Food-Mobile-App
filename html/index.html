@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
 
@@ -13,6 +13,7 @@
     <title>Kecipi</title>
   </head>
   <body>
+    <!-- HEADER SECTION -->
     <header>
       <nav class="navbar navbar-light bg-secondary">
         <div class="navbar-container w-100 d-flex">
@@ -49,78 +50,77 @@
               <i class="fas fa-bookmark custom-icon-2"></i>
               Bookmarks
             </button>
-
-            <!-- Modal -->
-            <div
-              class="modal fade"
-              id="staticBackdrop"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                      Add Recipe
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">Insert Form Here</div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                      Add Recipe
-                    </button>
-                  </div>
+          </div>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="staticBackdrop"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Add Recipe
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">Insert Form Here</div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Add Recipe
+                  </button>
                 </div>
               </div>
             </div>
-            <div
-              class="modal fade"
-              id="staticBackdrop2"
-              data-bs-backdrop="static"
-              data-bs-keyboard="false"
-              tabindex="-1"
-              aria-labelledby="staticBackdropLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                      Bookmarks
-                    </h1>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">There are no bookmarks yet.</div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                  </div>
+          </div>
+          <div
+            class="modal fade"
+            id="staticBackdrop2"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            tabindex="-1"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                    Bookmarks
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">There are no bookmarks yet.</div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
                 </div>
               </div>
             </div>
@@ -128,9 +128,58 @@
         </div>
       </nav>
     </header>
+
+    <!-- MAIN SECTION -->
     <main>
-      <section></section>
+      <section class="main bg-secondary">
+        <div class="row">
+          <div class="col-3 bg-white pe-0" id="results">
+            <div class="results-container py-32">
+              <ul class="results-all mb-24">
+                <li class="results-individual px-24 py-16">
+                  <a href="#" class="results-link d-flex align-items-center">
+                    <figure class="food-figure"></figure>
+                    <div class="food-details">
+                      <p class="food-name mb-8 font-18 text-primary">
+                        chicken noodles soup
+                      </p>
+                      <p class="food-publisher font-14 text-black">
+                        all recipes
+                      </p>
+                    </div>
+                  </a>
+                </li>
+                <li class="results-individual px-24 py-16">
+                  <a href="#" class="results-link d-flex align-items-center">
+                    <figure class="food-figure food-figure-2"></figure>
+                    <div class="food-details">
+                      <p class="food-name mb-8 font-18 text-primary">
+                        buff jhol momo
+                      </p>
+                      <p class="food-publisher font-14 text-black">
+                        everest momo
+                      </p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <div
+                class="pagination-btn d-flex justify-content-between px-24 hidden"
+              >
+                <button class="btn-1-small">
+                  <i class="fas fa-arrow-left"></i>Previous Page
+                </button>
+                <button class="btn-1-small">
+                  Next Page<i class="fas fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-9 bg-secondary text-white" id="details"></div>
+        </div>
+      </section>
     </main>
+    <!-- FOOTER SECTION -->
     <footer></footer>
 
     <script

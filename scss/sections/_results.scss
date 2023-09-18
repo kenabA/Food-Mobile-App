@@ -1,0 +1,56 @@
+@use "../custom" as *;
+#results {
+  border-radius: 0px 24px 0px 0px !important;
+  .results {
+    &-individual {
+      transition: all 0.2s ease;
+      overflow-y: hidden;
+      &:hover {
+        background-color: $secondary !important;
+        transform: translateY(-2px) !important;
+      }
+    }
+    &-link {
+      text-decoration: none;
+      gap: 18px;
+    }
+    &-all {
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+
+  .food {
+    &-figure {
+      height: 60px;
+      width: 60px;
+      background-image: linear-gradient(
+          rgba(82, 48, 127, 0.4),
+          rgba(82, 48, 127, 0.4)
+        ),
+        url(/images/noodles.webp);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 50%;
+      margin-bottom: 0px;
+    }
+    &-figure-2 {
+      background-image: linear-gradient(
+          rgba(82, 48, 127, 0.4),
+          rgba(82, 48, 127, 0.4)
+        ),
+        url(/images/jholmomo.jpeg);
+    }
+    &-name {
+      font-weight: 600;
+      margin-bottom: 0px;
+      text-transform: uppercase;
+    }
+    &-publisher {
+      font-weight: 500;
+      margin-bottom: 0px;
+      text-transform: uppercase;
+    }
+  }
+}
