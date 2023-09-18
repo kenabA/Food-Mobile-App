@@ -10,7 +10,7 @@
     />
 
     <link rel="stylesheet" href="../assets/css/fontawesome.css" />
-    <title>Kecipi</title>
+    <title>Recipe</title>
   </head>
   <body>
     <!-- HEADER SECTION -->
@@ -133,8 +133,8 @@
     <main>
       <section class="main bg-secondary">
         <div class="row">
-          <div class="col-3 bg-white pe-0" id="results">
-            <div class="results-container py-32">
+          <div class="col-3 bg-white pe-0 py-32" id="results">
+            <div class="results-container">
               <ul class="results-all mb-24">
                 <li class="results-individual px-24 py-16">
                   <a href="#" class="results-link d-flex align-items-center">
@@ -176,7 +176,27 @@
             </div>
           </div>
           <div class="col-9 bg-secondary text-white" id="details">
-            <figure class="food-background"></figure>
+            <figure class="food-background d-flex">
+              <div class="details-header px-24 pb-18">
+                <h4 class="text-gamma text-white">BUFF JHOL MOMO</h1>
+              </div>
+            </figure>
+            <div class="food-basic-details text-black d-flex px-24 py-32 gap-24">
+              <div class="duration d-flex align-items-center gap-8">
+                <i class="fas fa-clock text-primary"></i>
+                <p class="m-0"><span class="bold-me">30</span> Minutes</p>
+              </div>
+              <div class="duration d-flex align-items-center gap-8">
+                <i class="fas fa-user-group text-primary"></i>
+                <p class="m-0"><span class="bold-me">2</span> Servings</p>
+              </div>
+
+
+            </div>
+            <div class="food-ingredients px-24 py-32 bg-primary-100 text-black">
+              <h5 class="text-delta text-primary">Recipe Ingredients</h5>
+
+            </div>
           </div>
         </div>
       </section>
