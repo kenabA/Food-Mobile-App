@@ -23,7 +23,7 @@ function showRecipe() {
       if (response.status === 200) {
         return response.json();
       } else {
-        alert("Incorrect Call");
+        alert(`Response Status: ${response.status}`);
       }
     })
     .then(function (data) {
@@ -120,4 +120,7 @@ function showRecipe() {
       alert(`Unfortunate error: ${error}`);
     });
 }
-window.addEventListener("hashchange", showRecipe);
+
+["hashchange", "load"].forEach(function (ev) {
+  window.addEventListener(ev, showRecipe);
+});
