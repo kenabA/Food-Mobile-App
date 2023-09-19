@@ -10,40 +10,43 @@ const spinner = function (ParentEl) {
               </div>
             </div>
   `;
+  ParentEl.innerHTML = " ";
   ParentEl.insertAdjacentHTML("afterbegin", markup);
 };
-spinner(detailsContainer);
+function showRecipe() {
+  idHash = window.location.hash.slice(1);
+  fetch(
+    `https://forkify-api.herokuapp.com/api/v2/recipes/${idHash}`,
+    spinner(detailsContainer)
+  )
+    .then(function (response) {
+      if (response.status === 200) {
+        return response.json();
+      } else {
+        alert("Incorrect Call");
+      }
+    })
+    .then(function (data) {
+      // FETCHING DATA
 
-fetch(
-  "https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bcf09"
-)
-  .then(function (response) {
-    if (response.status === 200) {
-      return response.json();
-    } else {
-      alert("Incorrect Call");
-    }
-  })
-  .then(function (data) {
-    // FETCHING DATA
-    let { recipe } = data.data;
-    recipe = {
-      id: recipe.id,
-      title: recipe.title,
-      publisher: recipe.publisher,
-      sourceUrl: recipe.source_url,
-      image: recipe.image_url,
-      servings: recipe.servings,
-      cookingTime: recipe.cooking_time,
-      ingredients: recipe.ingredients,
-    };
-    console.log(recipe);
-    // RENDERING DATA
+      let { recipe } = data.data;
+      recipe = {
+        id: recipe.id,
+        title: recipe.title,
+        publisher: recipe.publisher,
+        sourceUrl: recipe.source_url,
+        image: recipe.image_url,
+        servings: recipe.servings,
+        cookingTime: recipe.cooking_time,
+        ingredients: recipe.ingredients,
+      };
+      console.log(recipe);
+      // RENDERING DATA
 
-    detailsContainer.innerHTML = "";
+      detailsContainer.innerHTML = "";
 
-    const markup = `
-            <style> 
+      const markup = `
+            <style>
                 .food-background{
                   background-image: linear-gradient( rgba(82, 48, 127, 0.4), rgba(82, 48, 127, 1)), url('${
                     recipe.image
@@ -89,8 +92,7 @@ fetch(
                         `;
                         })
                         .join(" ")}
-                        
-                        
+
                       </ul>
                     </div>
                     <div class="food-recipe px-32 py-32 bg-secondary">
@@ -112,8 +114,10 @@ fetch(
                       </p>
                     </div>
     `;
-    detailsContainer.insertAdjacentHTML("afterbegin", markup);
-  })
-  .catch(function (error) {
-    alert(`Unfortunate error: ${error}`);
-  });
+      detailsContainer.insertAdjacentHTML("afterbegin", markup);
+    })
+    .catch(function (error) {
+      alert(`Unfortunate error: ${error}`);
+    });
+}
+window.addEventListener("hashchange", showRecipe);
