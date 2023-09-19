@@ -2,22 +2,23 @@ detailsContainer = document.querySelector("#details");
 foodBackground = document.querySelector(".food-background");
 
 const spinner = function (ParentEl) {
+  // ADDING ON SPINNER
   const markup = `
-
   <div class="spinner-container">
               <div class="spinner-border m-5 text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
             </div>
   `;
-  ParentEl.innerHTML = " ";
+  ParentEl.innerHTML = "";
   ParentEl.insertAdjacentHTML("afterbegin", markup);
 };
+// MAIN RECIPE FUNCTION
 function showRecipe() {
   idHash = window.location.hash.slice(1);
-
+  // WHEN THERE IS NO ID
   if (idHash == "") return;
-
+  // FETCHING THE MAIN API
   fetch(
     `https://forkify-api.herokuapp.com/api/v2/recipes/${idHash}`,
     spinner(detailsContainer)
@@ -32,6 +33,7 @@ function showRecipe() {
     .then(function (data) {
       // FETCHING DATA
 
+      // DE-STRUCTURING THE API (recipe object)
       let { recipe } = data.data;
       recipe = {
         id: recipe.id,
@@ -44,10 +46,13 @@ function showRecipe() {
         ingredients: recipe.ingredients,
       };
       console.log(recipe);
+
       // RENDERING DATA
 
+      // CLEARING OUT ALL THE ELEMTNS FROM DETAILS CONTAINER
       detailsContainer.innerHTML = "";
 
+      // ADDING ON THE STRUCTURE
       const markup = `
             <style>
                 .food-background{
@@ -117,6 +122,7 @@ function showRecipe() {
                       </p>
                     </div>
     `;
+      // INSERTING THE STRUCTURE AFTER THE START OF THE DETAILS CONTAINER
       detailsContainer.insertAdjacentHTML("afterbegin", markup);
     })
     .catch(function (error) {
@@ -124,6 +130,7 @@ function showRecipe() {
     });
 }
 
+// ADDING ON THE WINOW ADD EVENT LISTERNER FUNCTION
 ["hashchange", "load"].forEach(function (ev) {
   window.addEventListener(ev, showRecipe);
 });
