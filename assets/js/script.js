@@ -15,6 +15,9 @@ const spinner = function (ParentEl) {
 };
 function showRecipe() {
   idHash = window.location.hash.slice(1);
+
+  if (idHash == "") return;
+
   fetch(
     `https://forkify-api.herokuapp.com/api/v2/recipes/${idHash}`,
     spinner(detailsContainer)
