@@ -64,13 +64,7 @@ class RecipeVeiw {
                       <h5 class="text-delta text-primary mb-24">Recipe Ingredients</h5>
                       <ul>
                       ${this._data.ingredients
-                        .map(function (ingredient) {
-                          return `
-                        <li class="d-flex align-items-center gap-12 mb-16">
-                          <i class="fas fa-check text-primary"></i>  ${ingredient.quantity} ${ingredient.unit} ${ingredient.description}
-                        </li>
-                        `;
-                        })
+                        .map(this._generateMarkupIngredient)
                         .join(" ")}
                       </ul>
                     </div>
@@ -95,6 +89,16 @@ class RecipeVeiw {
                       </p>
                     </div>
     `;
+  }
+  _generateMarkupIngredient(ingredient) {
+    return `
+  <li class="d-flex align-items-center gap-12 mb-16">
+    <i class="fas fa-check text-primary"></i>  ${
+      ingredient.quantity ? ingredient.quantity : ""
+    }
+     ${ingredient.unit} ${ingredient.description}
+  </li>
+  `;
   }
 }
 
