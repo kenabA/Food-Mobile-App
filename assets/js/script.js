@@ -1,8 +1,8 @@
-detailsContainer = document.querySelector("#details");
-foodBackground = document.querySelector(".food-background");
+import * as model from "./model.js";
+
+const detailsContainer = document.querySelector("#details");
 
 const spinner = function (ParentEl) {
-  // ADDING ON SPINNER
   const markup = `
   <div class="spinner-container">
               <div class="spinner-border m-5 text-primary" role="status">
@@ -13,47 +13,15 @@ const spinner = function (ParentEl) {
   ParentEl.innerHTML = "";
   ParentEl.insertAdjacentHTML("afterbegin", markup);
 };
-// MAIN RECIPE FUNCTION
-function showRecipe() {
-  idHash = window.location.hash.slice(1);
-  // WHEN THERE IS NO ID
-  if (idHash == "") return;
-  // FETCHING THE MAIN API
-  fetch(
-    `https://forkify-api.herokuapp.com/api/v2/recipes/${idHash}`,
-    spinner(detailsContainer)
-  )
-    .then(function (response) {
-      if (response.status === 200) {
-        return response.json();
-      } else {
-        alert(`Response Status: ${response.status}`);
-      }
-    })
-    .then(function (data) {
-      // FETCHING DATA
 
-      // DE-STRUCTURING THE API (recipe object)
-      let { recipe } = data.data;
-      recipe = {
-        id: recipe.id,
-        title: recipe.title,
-        publisher: recipe.publisher,
-        sourceUrl: recipe.source_url,
-        image: recipe.image_url,
-        servings: recipe.servings,
-        cookingTime: recipe.cooking_time,
-        ingredients: recipe.ingredients,
-      };
-      console.log(recipe);
-
-      // RENDERING DATA
-
-      // CLEARING OUT ALL THE ELEMTNS FROM DETAILS CONTAINER
-      detailsContainer.innerHTML = "";
-
-      // ADDING ON THE STRUCTURE
-      const markup = `
+async function showRecipe() {
+  spinner(detailsContainer);
+  const idHash = window.location.hash.slice(1);
+  if (!idHash) return;
+  await model.loadRecipe(idHash);
+  const { recipe } = model.state;
+  detailsContainer.innerHTML = "";
+  const markup = `
             <style>
                 .food-background{
                   background-image: linear-gradient( rgba(82, 48, 127, 0.4), rgba(82, 48, 127, 1)), url('${
@@ -100,7 +68,6 @@ function showRecipe() {
                         `;
                         })
                         .join(" ")}
-
                       </ul>
                     </div>
                     <div class="food-recipe px-32 py-32 bg-secondary">
@@ -122,15 +89,9 @@ function showRecipe() {
                       </p>
                     </div>
     `;
-      // INSERTING THE STRUCTURE AFTER THE START OF THE DETAILS CONTAINER
-      detailsContainer.insertAdjacentHTML("afterbegin", markup);
-    })
-    .catch(function (error) {
-      alert(`Unfortunate error: ${error}`);
-    });
+  detailsContainer.insertAdjacentHTML("afterbegin", markup);
 }
 
-// ADDING ON THE WINOW ADD EVENT LISTERNER FUNCTION
 ["hashchange", "load"].forEach(function (ev) {
   window.addEventListener(ev, showRecipe);
 });
