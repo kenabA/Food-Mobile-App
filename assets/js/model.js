@@ -21,6 +21,6 @@ export const loadRecipe = async function (idHash) {
     };
     console.log(state.recipe);
   } catch (err) {
-    alert(err);
+    console.log(err);
   }
 };
