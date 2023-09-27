@@ -1,6 +1,5 @@
 import { API_URL } from "./config.js";
 import { getJSON } from "./helpers.js";
-import recipeView from "./views/recipeView.js";
 
 export const state = {
   recipe: {},
