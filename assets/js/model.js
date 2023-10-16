@@ -24,3 +24,10 @@ export const loadRecipe = async function (idHash) {
     throw err;
   }
 };
+
+export const loadSearch = async function (input) {
+  try {
+  } catch (err) {
+    throw err;
+  }
+};
