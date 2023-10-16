@@ -1,5 +1,6 @@
 import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
+import searchView from "./views/searchView.js";
 
 const detailsContainer = document.querySelector("#details");
 
@@ -18,3 +19,18 @@ async function controlRecipe() {
 ["hashchange", "load"].forEach(function (ev) {
   window.addEventListener(ev, controlRecipe);
 });
+
+async function controlSearchResult() {
+  try {
+    const query = searchView.getQuery();
+    if (!query) return;
+    await model.loadSearch(query);
+    console.log(model.state.search.results);
+  } catch (err) {
+    console.log(err);
+  }
+}
+const init = function () {
+  searchView.addHandlerSearch(controlSearchResult);
+};
+init();
