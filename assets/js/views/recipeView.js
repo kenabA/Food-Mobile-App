@@ -1,7 +1,7 @@
 import View from "./view.js";
 
 class RecipeVeiw extends View {
-  _detailsContainer = document.querySelector("#details");
+  _parentEl = document.querySelector("#details");
 
   generateMarkup() {
     return `

@@ -3,7 +3,7 @@ export default class View {
     this._data = data;
     this._clear();
     const markup = this.generateMarkup();
-    this._detailsContainer.insertAdjacentHTML("afterbegin", markup);
+    this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 
   renderSpinner() {
@@ -15,16 +15,16 @@ export default class View {
               </div>
     `;
     this._clear();
-    this._detailsContainer.insertAdjacentHTML("afterbegin", markup2);
+    this._parentEl.insertAdjacentHTML("afterbegin", markup2);
   }
 
   _clear() {
-    this._detailsContainer.innerHTML = "";
+    this._parentEl.innerHTML = "";
   }
 
   renderError(msg) {
     const markup = `<p class="text-danger font-18 fw-medium text-center h-100 d-flex align-items-center justify-content-center">NO RECIPE FOUND!</p>`;
     this._clear();
-    this._detailsContainer.insertAdjacentHTML("afterbegin", markup);
+    this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 }

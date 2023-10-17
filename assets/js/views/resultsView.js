@@ -1,6 +1,6 @@
-import View from "./view";
+import View from "./view.js";
 class ResultsView extends View {
-  _detailsContainer = document.querySelector("#results");
+  _parentEl = document.querySelector("#results");
 }
 
 export default new ResultsView();
