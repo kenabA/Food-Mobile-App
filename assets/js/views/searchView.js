@@ -1,4 +1,4 @@
-class searchView {
+class SearchView {
   _searchViewForm = document.querySelector(".search-view-form");
 
   getQuery() {
@@ -21,4 +21,4 @@ class searchView {
   }
 }
 
-export default new searchView();
+export default new SearchView();
