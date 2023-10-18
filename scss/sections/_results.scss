@@ -24,25 +24,14 @@
   .food {
     &-figure {
       height: 60px;
-      width: 60px;
-      background-image: linear-gradient(
-          rgba(82, 48, 127, 0.4),
-          rgba(82, 48, 127, 0.4)
-        ),
-        url(/images/noodles.webp);
+      min-width: 60px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 50%;
       margin-bottom: 0px;
     }
-    &-figure-2 {
-      background-image: linear-gradient(
-          rgba(82, 48, 127, 0.4),
-          rgba(82, 48, 127, 0.4)
-        ),
-        url(/images/jholmomo.jpeg);
-    }
+
     &-name {
       font-weight: 600;
       margin-bottom: 0px;
