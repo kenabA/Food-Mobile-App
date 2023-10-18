@@ -5,6 +5,7 @@ export const getJSON = async function (url) {
     if (res.status != 200) console.log("Invalid Status Code.");
     return data;
   } catch (err) {
+    console.log("No found");
     throw err;
   }
 };

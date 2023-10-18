@@ -3,7 +3,6 @@ class ResultsView extends View {
   _parentEl = document.querySelector("#results");
 
   generateMarkup() {
-    console.log(this._data);
     return this._data.map(this.generateMarkupPreview).join("");
   }
   generateMarkupPreview(results) {

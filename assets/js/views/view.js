@@ -1,6 +1,11 @@
 export default class View {
+  _errorMessage = "NO RECIPES FOUND";
   render(data) {
     this._data = data;
+    console.log("Yo");
+    if (this._data.length == 0) {
+      return this.renderError(this._errorMessage);
+    }
     this._clear();
     const markup = this.generateMarkup();
     this._parentEl.insertAdjacentHTML("afterbegin", markup);

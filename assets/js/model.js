@@ -34,6 +34,7 @@ export const loadSearch = async function (input) {
   try {
     state.search.query = input;
     const data = await getJSON(`${API_URL}?search=${input}`);
+    console.log(data);
     state.search.results = data.data.recipes.map(function (recipes) {
       return {
         id: recipes.id,
@@ -43,7 +44,7 @@ export const loadSearch = async function (input) {
       };
     });
   } catch (err) {
-    console.log(`${err} in Model.js`);
+    console.log(`Error in Model.js`);
     throw err;
   }
 };
