@@ -30,16 +30,6 @@ class ResultsView extends View {
         </a>
       </li>
     </ul>
-    <div
-      class="pagination-btn d-flex justify-content-between px-24 hidden"
-    >
-      <button class="btn-1-small">
-        <i class="fas fa-arrow-left"></i>Previous Page
-      </button>
-      <button class="btn-1-small">
-        Next Page<i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
   </div>`;
   }
 }

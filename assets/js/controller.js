@@ -28,7 +28,8 @@ async function controlSearchResult() {
     const query = SearchView.getQuery();
     if (!query) return;
     await model.loadSearch(query);
-    ResultsView.render(model.state.search.results);
+    // ResultsView.render(model.state.search.results);
+    ResultsView.render(model.getSearchResultsPage(1));
   } catch (err) {
     const errorMsg = "NO RECIPES FOUND!";
     ResultsView.renderError(errorMsg);
