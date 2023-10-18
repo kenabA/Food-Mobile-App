@@ -8,15 +8,6 @@ class ResultsView extends View {
   }
   generateMarkupPreview(results) {
     return `
-    <style>
-      .food-figure {
-      background-image: linear-gradient(
-        rgba(82, 48, 127, 0.4),
-        rgba(82, 48, 127, 0.4)
-      ),
-      url(${results.image});;
-    }
-    </style>
     <div class="results-container">
     <ul class="results-all">
       <li class="results-individual px-24 py-16">
@@ -24,14 +15,17 @@ class ResultsView extends View {
           href="#${results.id}"
           class="results-link d-flex align-items-center"
         >
-          <figure class="food-figure"></figure>
+        <div class="food-figure-container">
+          <div class="purple-overlay"></div>
+          <img src="${results.image}" class="food-figure"></img>
+        </div>
           <div class="food-details">
             <p class="food-name mb-8 font-18 text-primary">
               ${results.title}
               
             </p>
-            <p class="food-publisher font-8 text-black">
-              ${results.image}
+            <p class="food-publisher font-12 text-black">
+              ${results.publisher}
             </p>
           </div>
         </a>

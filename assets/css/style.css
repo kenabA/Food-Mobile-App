@@ -21263,7 +21263,13 @@ textarea.form-control-lg {
   padding: 0px;
 }
 #results .food-figure {
+  width: 100%;
+  height: 100%;
+}
+#results .food-figure-container {
+  position: relative;
   height: 60px;
+  max-width: 60px;
   min-width: 60px;
   background-position: center;
   background-repeat: no-repeat;
@@ -21280,6 +21286,14 @@ textarea.form-control-lg {
   font-weight: 500;
   margin-bottom: 0px;
   text-transform: uppercase;
+}
+#results .purple-overlay {
+  background: linear-gradient(rgba(82, 48, 127, 0.4), rgba(82, 48, 127, 0.4));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

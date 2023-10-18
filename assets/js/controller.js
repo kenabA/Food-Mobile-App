@@ -13,7 +13,8 @@ async function controlRecipe() {
     await model.loadRecipe(idHash);
     recipeView.render(model.state.recipe);
   } catch (err) {
-    recipeView.renderError(err);
+    const errorMsg = "NO RECIPES FOUND!";
+    recipeView.renderError(errorMsg);
   }
 }
 
@@ -29,7 +30,8 @@ async function controlSearchResult() {
     await model.loadSearch(query);
     ResultsView.render(model.state.search.results);
   } catch (err) {
-    console.log(err);
+    const errorMsg = "NO RECIPES FOUND!";
+    ResultsView.renderError(errorMsg);
   }
 }
 const init = function () {
