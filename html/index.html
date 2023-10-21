@@ -11,6 +11,11 @@
 
     <link rel="stylesheet" href="../assets/css/fontawesome.css" />
     <title>Recipe</title>
+    <style>
+      .search-results {
+        border-radius: 0px 24px 0px 0px !important;
+      }
+    </style>
   </head>
   <body>
     <!-- HEADER SECTION -->
@@ -133,8 +138,9 @@
     <main>
       <section class="main bg-secondary">
         <div class="row">
-          <div class="col-3 bg-white pe-0 py-32" id="results">
-            <!-- <div class="results-container">
+          <div class="col-3 bg-white pe-0 py-32 search-results">
+            <div id="results">
+              <!-- <div class="results-container">
               <ul class="results-all mb-24">
                 <li class="results-individual px-24 py-16">
                   <a
@@ -170,16 +176,17 @@
                 </li>
               </ul>
             </div> -->
-            <!-- <div
+            </div>
+            <div
               class="pagination pagination-btn d-flex justify-content-between px-24"
             >
-              <button class="btn-1-small">
+              <!-- <button class="btn-1-small">
                 <i class="fas fa-arrow-left"></i>Previous
               </button>
               <button class="btn-1-small">
                 Next<i class="fas fa-arrow-right"></i>
-              </button>
-            </div> -->
+              </button> -->
+            </div>
           </div>
           <div class="col-9 bg-secondary text-white" id="details">
             <!-- <figure class="food-background d-flex">
@@ -254,4 +261,3 @@
     <script type="module" src="/assets/js/controller.js"></script>
   </body>
 </html>
-ok

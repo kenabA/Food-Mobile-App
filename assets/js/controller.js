@@ -3,6 +3,7 @@ import recipeView from "./views/recipeView.js";
 import SearchView from "./views/searchView.js";
 import ResultsView from "./views/resultsView.js";
 import PaginationViewView from "./views/paginationView.js ";
+import paginationView from "./views/paginationView.js";
 const detailsContainer = document.querySelector("#details");
 const resultsContainer = document.querySelector("#results");
 
@@ -31,6 +32,8 @@ async function controlSearchResult() {
     await model.loadSearch(query);
     // ResultsView.render(model.state.search.results);
     ResultsView.render(model.getSearchResultsPage(1));
+    // render initial pagination buttons
+    paginationView.render(model.state.search);
   } catch (err) {
     const errorMsg = "NO RECIPES FOUND!";
     ResultsView.renderError(errorMsg);

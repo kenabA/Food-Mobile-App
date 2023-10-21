@@ -4,13 +4,15 @@ export default class View {
 
   render(data) {
     this._data = data;
-    console.log("Yo");
     if (this._data.length == 0) {
       resultsContainer.style.overflow = "hidden";
       return this.renderError(this._errorMessage);
     }
     this._clear();
     const markup = this.generateMarkup();
+    console.log("Ola diego");
+    console.log(markup);
+    console.log(this._parentEl);
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 
