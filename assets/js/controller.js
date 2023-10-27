@@ -2,7 +2,6 @@ import * as model from "./model.js";
 import recipeView from "./views/recipeView.js";
 import SearchView from "./views/searchView.js";
 import ResultsView from "./views/resultsView.js";
-import PaginationViewView from "./views/paginationView.js ";
 import paginationView from "./views/paginationView.js";
 const detailsContainer = document.querySelector("#details");
 const resultsContainer = document.querySelector("#results");
@@ -39,7 +38,13 @@ async function controlSearchResult() {
     ResultsView.renderError(errorMsg);
   }
 }
+
+function controlPagination() {
+  console.log("TRYING");
+}
+
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResult);
+  paginationView.addHandlerClick(controlPagination);
 };
 init();

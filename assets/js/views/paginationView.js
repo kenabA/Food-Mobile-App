@@ -1,6 +1,14 @@
 import View from "./view.js";
 class PaginationView extends View {
   _parentEl = document.querySelector(".pagination");
+
+  addHandlerClick(handler) {
+    this._parentEl.addEventListener("click", function (e) {
+      // const btn = e.target.closest(".btn-1-small");
+      handler();
+    });
+  }
+
   generateMarkup() {
     const numPages = Math.ceil(this._data.results.length / 10);
     console.log(numPages);
