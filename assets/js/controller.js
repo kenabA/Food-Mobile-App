@@ -30,7 +30,7 @@ async function controlSearchResult() {
     if (!query) return;
     await model.loadSearch(query);
     // ResultsView.render(model.state.search.results);
-    ResultsView.render(model.getSearchResultsPage(1));
+    ResultsView.render(model.getSearchResultsPage(2));
     // render initial pagination buttons
     paginationView.render(model.state.search);
   } catch (err) {
