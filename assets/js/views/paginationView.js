@@ -5,8 +5,10 @@ class PaginationView extends View {
   addHandlerClick(handler) {
     this._parentEl.addEventListener("click", function (e) {
       const btn = e.target.closest(".btn-1-small");
-      console.log(btn);
-      handler();
+      if (!btn) return;
+      const goToPage = +btn.dataset.goto;
+      console.log(typeof goToPage);
+      handler(goToPage);
     });
   }
 
@@ -23,7 +25,6 @@ class PaginationView extends View {
 
     // last page
     if (this._data.page === numPages && numPages > 1) {
-      console.log("last page");
       return `<button data-goto="${this._data.page - 1}" class="btn-1-small">
       <i class="fas fa-arrow-left"></i>Page ${this._data.page - 1}
     </button>
@@ -31,7 +32,6 @@ class PaginationView extends View {
     }
     // other page
     if (this._data.page < numPages) {
-      console.log("Other Pages");
       return `<button data-goto="${this._data.page - 1}" class="btn-1-small">
       <i class="fas fa-arrow-left"></i>Page ${this._data.page - 1}
     </button>

@@ -41,6 +41,24 @@
   border: none;
   border-radius: 24px;
   transition: all 0.2s ease !important;
+  &-small {
+    overflow: unset !important;
+    transition: 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    padding-block: 4px;
+    border-radius: 24px;
+    padding-inline: 6px;
+    font-weight: bolder;
+    background-color: unset;
+    color: $primary !important;
+    border: 2px solid $primary;
+    &:active {
+      transform: translateY(-2px);
+    }
+  }
 }
 .btn-2:hover {
   .custom-icon {

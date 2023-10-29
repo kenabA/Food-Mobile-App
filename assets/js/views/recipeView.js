@@ -30,14 +30,26 @@ class RecipeVeiw extends View {
                           }</span> Minutes
                         </p>
                       </div>
-                      <div class="duration d-flex align-items-center gap-8">
-                        <i class="fas fa-user-group text-primary"></i>
-                        <p class="m-0 font-16 serving-data">
-                          <span class="bold-me">${
-                            this._data.servings
-                          }</span> Servings
-                        </p>
-                      </div>
+                      
+                      
+                      <div class="duration d-flex align-items-center gap-12">
+                        <div class="d-flex align-items-center gap-8">
+                          <i class="fas fa-user-group text-primary"></i>
+                          <p class="m-0 font-16 serving-data">
+                            <span class="bold-me">${
+                              this._data.servings
+                            } </span> Servings
+                          </p>
+                        </div>
+                        <div class="duration d-flex align-items-center gap-4 py-2 ">
+                          <button class="btn-2-small">
+                            <i class="fas fa-plus"></i>
+                          </button>
+                          <button class="btn-2-small">
+                            <i class="fas fa-minus"></i>
+                          </button>
+                        </div>
+              </div>
                     </div>
                     <div class="food-ingredients px-32 py-32 bg-primary-100 text-black">
                       <h5 class="text-delta text-primary mb-24">Recipe Ingredients</h5>

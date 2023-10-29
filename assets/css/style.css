@@ -20984,6 +20984,24 @@ textarea.form-control-lg {
   border-radius: 24px;
   transition: all 0.2s ease !important;
 }
+.btn-2-small {
+  overflow: unset !important;
+  transition: 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  padding-block: 4px;
+  border-radius: 24px;
+  padding-inline: 6px;
+  font-weight: bolder;
+  background-color: unset;
+  color: rgb(82, 48, 127) !important;
+  border: 2px solid rgb(82, 48, 127);
+}
+.btn-2-small:active {
+  transform: translateY(-2px);
+}
 
 .btn-2:hover {
   color: #46296c;
@@ -21244,7 +21262,6 @@ textarea.form-control-lg {
 
 #results {
   min-height: 100vh;
-  border-radius: 0px 24px 0px 0px !important;
 }
 #results .results-individual {
   transition: all 0.2s ease;

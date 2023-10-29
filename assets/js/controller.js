@@ -30,7 +30,7 @@ async function controlSearchResult() {
     if (!query) return;
     await model.loadSearch(query);
     // ResultsView.render(model.state.search.results);
-    ResultsView.render(model.getSearchResultsPage(2));
+    ResultsView.render(model.getSearchResultsPage(1));
     // render initial pagination buttons
     paginationView.render(model.state.search);
   } catch (err) {
@@ -39,8 +39,12 @@ async function controlSearchResult() {
   }
 }
 
-function controlPagination() {
-  console.log("TRYING");
+function controlPagination(page) {
+  // ResultsView.render(model.state.search.results);
+  ResultsView.render(model.getSearchResultsPage(page));
+  // render initial pagination buttons
+  paginationView.render(model.state.search);
+  console.log(page);
 }
 
 const init = function () {
