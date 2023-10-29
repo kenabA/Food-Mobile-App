@@ -38,6 +38,8 @@ class PaginationView extends View {
       Next<i class="fas fa-arrow-right"></i>
     </button> `;
     }
+
+    return "";
   }
 }
 
