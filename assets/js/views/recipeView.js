@@ -3,6 +3,15 @@ import View from "./view.js";
 class RecipeVeiw extends View {
   _parentEl = document.querySelector("#details");
 
+  addHandlerServings(handler) {
+    this._parentEl.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn-2-small");
+      if (!btn) return;
+      const updateTo = +btn.dataset.updateTo;
+      if (updateTo > 0) handler(updateTo);
+    });
+  }
+
   generateMarkup() {
     return `
             <style>
@@ -42,10 +51,14 @@ class RecipeVeiw extends View {
                           </p>
                         </div>
                         <div class="duration d-flex align-items-center gap-4 py-2 ">
-                          <button class="btn-2-small">
+                          <button class="btn-2-small" data-update-to="${
+                            this._data.servings + 1
+                          }">
                             <i class="fas fa-plus"></i>
                           </button>
-                          <button class="btn-2-small">
+                          <button class="btn-2-small" data-update-to="${
+                            this._data.servings - 1
+                          }">
                             <i class="fas fa-minus"></i>
                           </button>
                         </div>
