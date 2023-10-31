@@ -28,9 +28,11 @@ class RecipeVeiw extends View {
                         }</h4>
                       </div>
                     </figure>
-                    <div
-                      class="food-basic-details text-black d-flex px-32 py-24 gap-24"
-                    >
+
+
+
+                    <div class="d-flex justify-content-between px-32 py-24">
+                    <div class="food-basic-details text-black d-flex gap-24">
                       <div class="duration d-flex align-items-center gap-8">
                         <i class="fas fa-clock text-primary font-18"></i>
                         <p class="m-0 font-16 duration-data">
@@ -39,15 +41,13 @@ class RecipeVeiw extends View {
                           }</span> Minutes
                         </p>
                       </div>
-                      
-                      
                       <div class="duration d-flex align-items-center gap-12">
                         <div class="d-flex align-items-center gap-8">
                           <i class="fas fa-user-group text-primary"></i>
                           <p class="m-0 font-16 serving-data">
                             <span class="bold-me">${
                               this._data.servings
-                            } </span> Servings
+                            }</span> Servings
                           </p>
                         </div>
                         <div class="duration d-flex align-items-center gap-4 py-2 ">
@@ -62,8 +62,20 @@ class RecipeVeiw extends View {
                             <i class="fas fa-minus"></i>
                           </button>
                         </div>
-              </div>
+                      </div>
                     </div>
+                    <div>
+                      <button
+                        class="btn d-flex align-items-center justify-content-center"
+                      >
+                        <i class="far fa-bookmark text-primary font-18"></i>
+                      </button>
+                    </div>
+                  </div>
+
+
+
+
                     <div class="food-ingredients px-32 py-32 bg-primary-100 text-black">
                       <h5 class="text-delta text-primary mb-24">Recipe Ingredients</h5>
                       <ul>
