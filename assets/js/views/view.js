@@ -10,9 +10,6 @@ export default class View {
     }
     this._clear();
     const markup = this.generateMarkup();
-    console.log("Ola diego");
-    console.log(markup);
-    console.log(this._parentEl);
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 
