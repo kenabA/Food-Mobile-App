@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../assets/css/fontawesome.css" />
     <title>Recipe</title>
     <style>
+      .bookmark-container {
+        min-height: auto !important;
+      }
       .search-results {
         border-radius: 0px 24px 0px 0px !important;
       }
@@ -121,7 +124,44 @@
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body">There are no bookmarks yet.</div>
+                <div class="modal-body">
+                  <div id="results" class="bookmark-container">
+                    <div class="results-container">
+                      <ul class="results-all mb-24">
+                        <li class="results-individual px-24 py-16">
+                          <a
+                            href="#5ed6604591c37cdc054bcf89"
+                            class="results-link d-flex align-items-center"
+                          >
+                            <div class="food-details">
+                              <p class="food-name mb-8 font-18 text-primary">
+                                chicken noodles soup
+                              </p>
+                              <p class="food-publisher font-14 text-black">
+                                all recipes
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="results-individual px-24 py-16">
+                          <a
+                            href="#5ed6604591c37cdc054bcf89"
+                            class="results-link d-flex align-items-center"
+                          >
+                            <div class="food-details">
+                              <p class="food-name mb-8 font-18 text-primary">
+                                chicken noodles soup
+                              </p>
+                              <p class="food-publisher font-14 text-black">
+                                all recipes
+                              </p>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
                 <div class="modal-footer">
                   <button
                     type="button"
@@ -279,6 +319,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script type="module" src="/assets/js/controller.js"></script>
+    <!-- <script type="module" src="/assets/js/controller.js"></script> -->
   </body>
 </html>

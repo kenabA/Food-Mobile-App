@@ -1,6 +1,7 @@
 @use "../custom" as *;
 #results {
   min-height: 100vh;
+
   .results {
     &-individual {
       transition: all 0.2s ease;
