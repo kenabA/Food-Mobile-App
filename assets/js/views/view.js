@@ -30,7 +30,7 @@ export default class View {
   }
 
   renderError(msg) {
-    const markup = `<p class="text-black font-18 fw-medium text-center h-100 d-flex align-items-top justify-content-center">${msg}</p>`;
+    const markup = `<p class="text-black font-18 fw-medium text-center h-100 d-flex align-items-top justify-content-center">No Recipe found!</p>`;
     this._clear();
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
