@@ -56,13 +56,13 @@ const controlServings = function (newServings) {
 
 function controlAddBookmark() {
   model.addBookmark(model.state.recipe);
-  console.log("OLOOLOLOLL");
-  console.log(model.state.recipe);
+  recipeView.render(model.state.recipe);
 }
 
 const init = function () {
   SearchView.addHandlerSearch(controlSearchResult);
   paginationView.addHandlerClick(controlPagination);
   recipeView.addHandlerServings(controlServings);
+  recipeView.addHandlerAddBookmark(controlAddBookmark);
 };
 init();

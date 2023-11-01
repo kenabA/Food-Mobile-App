@@ -12,6 +12,14 @@ class RecipeVeiw extends View {
     });
   }
 
+  addHandlerAddBookmark(handler) {
+    this._parentEl.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn-bookmark");
+      if (!btn) return;
+      handler();
+    });
+  }
+
   generateMarkup() {
     return `
             <style>
@@ -66,9 +74,11 @@ class RecipeVeiw extends View {
                     </div>
                     <div>
                       <button
-                        class="btn d-flex align-items-center justify-content-center"
+                        class="btn btn-bookmark d-flex align-items-center justify-content-center"
                       >
-                        <i class="far fa-bookmark text-primary font-18"></i>
+                        <i class="fa${
+                          this._data.bookmarked ? "-solid" : "-regular"
+                        } fa-bookmark text-primary font-18"></i>
                       </button>
                     </div>
                   </div>

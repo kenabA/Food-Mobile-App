@@ -9,7 +9,7 @@ export const state = {
     page: 1,
     resultsPerPage: RES_PER_PAGE,
   },
-  bookmarks: {},
+  bookmarks: [],
 };
 
 export const loadRecipe = async function (idHash) {
@@ -27,6 +27,10 @@ export const loadRecipe = async function (idHash) {
       ingredients: recipe.ingredients,
     };
     console.log(state.recipe);
+    // error aairaxa jaba yo muni ko code block run hunxa taba recipe not found vanera auxa fix gara
+    // if (state.bookmarks.some((bookmark) => bookmark.id === id))
+    //   state.recipe.bookmarked = true;
+    // else state.recipe.bookmarked = false;
   } catch (err) {
     throw err;
   }
