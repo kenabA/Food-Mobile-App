@@ -26,6 +26,7 @@ export const loadRecipe = async function (idHash) {
       cookingTime: recipe.cooking_time,
       ingredients: recipe.ingredients,
     };
+    console.log(state.recipe);
     if (state.bookmarks.some((bookmark) => bookmark.id === recipe.id)) {
       state.recipe.bookmarked = true;
     } else {
@@ -76,5 +77,14 @@ export const addBookmark = function (recipe) {
   // Mark current as bookmarked
   if (recipe.id === state.recipe.id) {
     state.recipe.bookmarked = true;
+  }
+};
+
+export const deleteBookmark = function (id) {
+  // Delete Bookmark
+  const index = state.bookmarks.findIndex((el) => el.id === id);
+  state.bookmarks.splice(index, 1);
+  if (id === state.recipe.id) {
+    state.recipe.bookmarked = false;
   }
 };

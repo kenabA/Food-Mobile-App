@@ -55,7 +55,12 @@ const controlServings = function (newServings) {
 };
 
 function controlAddBookmark() {
-  model.addBookmark(model.state.recipe);
+  if (!model.state.recipe.bookmarked) {
+    model.addBookmark(model.state.recipe);
+  } else {
+    model.deleteBookmark(model.state.recipe.id);
+  }
+
   recipeView.render(model.state.recipe);
 }
 
